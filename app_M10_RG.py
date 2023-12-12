@@ -80,12 +80,7 @@ def stations():
     
     session.close()
     print (sresults)
-    # Convert list of tuples into dictionary
-    #all_stations = []
-    #for id, station, name in sresults:
-        #station_dict = {}
-        #station_dict[station] = station
-        #all_stations.append(station_dict)
+    # Convert list into dictionary
     all_stations = list(np.ravel(sresults))
 
     return jsonify(all_stations)
@@ -102,14 +97,7 @@ def tobs():
     
     session.close()
 
-    # Convert list of tuples into dictionary
-    # tobs_list = []
-    # for date,tobs in tresults:
-    #     tobs_dict = {}
-    #     tobs_dict[date] = date
-    #     tobs_dict[tobs] = tobs
-    #     tobs_list.append(tobs_dict)
-
+    # Convert list into dictionary
     tobs_list = list(np.ravel(tresults)) 
 
     return jsonify(tobs_list)
@@ -128,16 +116,7 @@ def stats(start):
     
     session.close()
 
-    # Convert list of tuples into dictionary
-    # start_date = []
-    # for date,tmin,tavg,tmax in rresults:
-    #     start_dict = {}
-    #     start_dict ['date'] = date
-    #     start_dict ['tmin'] = tmin
-    #     start_dict ['tavg'] = tavg
-    #     start_dict ['tmax'] = tmax
-    #     start_date.append(start_dict)
-
+    # Convert list into dictionary
     temp_list = list(np.ravel(rresults)) 
 
     return jsonify(temp_list)
